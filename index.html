@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Visualisasi Demografi Indonesia dan Dampaknya terhadap Kebutuhan Pangan</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body{
+    background:#f5f7fb;
+    font-family:Segoe UI,sans-serif;
+}
+
+.hero{
+
+background:linear-gradient(135deg,#0d6efd,#4a8fff);
+color:white;
+padding:80px 0;
+
+}
+
+.section-title{
+
+font-weight:bold;
+color:#0d6efd;
+margin-bottom:20px;
+
+}
+
+.card-box{
+
+background:white;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+padding:30px;
+
+}
+
+.stat{
+
+text-align:center;
+
+}
+
+.stat h2{
+
+font-size:42px;
+font-weight:bold;
+color:#0d6efd;
+
+}
+
+.stat p{
+
+margin-bottom:0;
+
+}
+
+.interpretation{
+
+background:#eef6ff;
+border-left:5px solid #0d6efd;
+padding:20px;
+border-radius:8px;
+
+}
+
+.pyramid-row{
+
+display:flex;
+justify-content:center;
+align-items:center;
+margin:6px 0;
+
+}
+
+.male{
+
+background:#4a90e2;
+height:20px;
+margin-right:4px;
+
+}
+
+.female{
+
+background:#ff8fa3;
+height:20px;
+margin-left:4px;
+
+}
+
+.center-age{
+
+width:80px;
+text-align:center;
+font-size:13px;
+
+}
+
+footer{
+
+background:#0d6efd;
+color:white;
+padding:20px;
+margin-top:60px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ================================================= -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-8">
+
+<h1 class="display-5 fw-bold">
+
+Proyeksi Demografi Indonesia
+Menuju Tahun 2045
+
+</h1>
+
+<p class="lead mt-4">
+
+Visualisasi berdasarkan proyeksi Badan Pusat Statistik (BPS)
+mengenai pertumbuhan penduduk, perubahan struktur demografi,
+dan implikasinya terhadap kebutuhan pangan nasional.
+
+</p>
+
+</div>
+
+<div class="col-lg-4 text-center">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+class="img-fluid"
+style="max-width:250px;">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================================= -->
+
+<div class="container mt-5">
+
+<div class="row g-4">
+
+<div class="col-md-3">
+
+<div class="card-box stat">
+
+<h2>269,58</h2>
+
+<h5>Juta Jiwa</h5>
+
+<p>Penduduk Tahun 2020</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card-box stat">
+
+<h2>324,05</h2>
+
+<h5>Juta Jiwa</h5>
+
+<p>Proyeksi Tahun 2045</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card-box stat">
+
+<h2>54,47</h2>
+
+<h5>Juta Jiwa</h5>
+
+<p>Kenaikan Populasi</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="card-box stat">
+
+<h2>2045</h2>
+
+<h5>Tahun Proyeksi</h5>
+
+<p>Badan Pusat Statistik</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================================================= -->
+
+<div class="container mt-5">
+
+<div class="card-box">
+
+<h2 class="section-title">
+
+1. Proyeksi Jumlah Penduduk Indonesia
+
+</h2>
+
+<p style="text-align:justify;">
+
+Badan Pusat Statistik (BPS) memperkirakan bahwa populasi Indonesia akan meningkat dari sekitar
+<strong>269,58 juta jiwa pada tahun 2020</strong>
+menjadi sekitar
+<strong>324,05 juta jiwa pada tahun 2045</strong>.
+Kenaikan sebesar
+<strong>54,47 juta jiwa</strong>
+menunjukkan bahwa jumlah penduduk Indonesia masih terus bertambah.
+Namun demikian, perubahan demografi yang terjadi tidak hanya ditandai oleh bertambahnya jumlah penduduk,
+melainkan juga oleh perubahan struktur umur masyarakat.
+
+</p>
+
+<canvas id="populationChart" height="90"></canvas>
+
+<div class="interpretation mt-4">
+
+<strong>Interpretasi Grafik</strong>
+
+<hr>
+
+Grafik menunjukkan adanya peningkatan jumlah penduduk Indonesia dari tahun 2020 hingga proyeksi tahun 2045.
+Pertumbuhan ini menunjukkan bahwa kebutuhan dasar masyarakat seperti pangan,
+kesehatan, pendidikan, dan perumahan juga diperkirakan akan terus meningkat.
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================================================= -->
+
+<div class="container mt-5">
+
+<div class="card-box">
+
+<h2 class="section-title">
+
+2. Perubahan Struktur Demografi
+
+</h2>
+
+<p style="text-align:justify;">
+
+Meskipun jumlah penduduk terus meningkat,
+tingkat kelahiran diperkirakan mengalami penurunan.
+Di sisi lain,
+harapan hidup masyarakat semakin meningkat sehingga jumlah penduduk lanjut usia
+akan semakin besar.
+Perubahan ini menunjukkan bahwa Indonesia bergerak menuju
+<strong>Ageing Society</strong>.
+
+</p>
+
+<h5 class="text-center mb-4">
+
+Ilustrasi Population Pyramid Tahun 2045
+
+</h5>
+
+<div class="container">
+
+<div class="pyramid-row">
+
+<div class="male" style="width:40px;"></div>
+
+<div class="center-age">75+</div>
+
+<div class="female" style="width:55px;"></div>
+
+</div>
+
+<div class="pyramid-row">
+
+<div class="male" style="width:70px;"></div>
+
+<div class="center-age">60-74</div>
+
+<div class="female" style="width:90px;"></div>
+
+</div>
+
+<div class="pyramid-row">
+
+<div class="male" style="width:120px;"></div>
+
+<div class="center-age">40-59</div>
+
+<div class="female" style="width:125px;"></div>
+
+</div>
+
+<div class="pyramid-row">
+
+<div class="male" style="width:150px;"></div>
+
+<div class="center-age">20-39</div>
+
+<div class="female" style="width:145px;"></div>
+
+</div>
+
+<div class="pyramid-row">
+
+<div class="male" style="width:100px;"></div>
+
+<div class="center-age">0-19</div>
+
+<div class="female" style="width:95px;"></div>
+
+</div>
+
+</div>
+
+<div class="alert alert-info mt-4">
+
+<b>Apa yang ditunjukkan Population Pyramid?</b>
+
+<ul>
+
+<li>Basis usia muda mulai mengecil karena tingkat kelahiran menurun.</li>
+
+<li>Kelompok usia produktif masih mendominasi populasi.</li>
+
+<li>Kelompok lansia semakin besar akibat meningkatnya harapan hidup.</li>
+
+<li>Indonesia diproyeksikan memasuki fase <i>Ageing Society</i>.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================================================= -->
+
+<div class="container mt-5">
+
+<div class="card-box">
+
+<h2 class="section-title">
+
+3. Perubahan Demografi Indonesia
+
+</h2>
+
+<p>
+
+Grafik berikut merupakan ilustrasi perubahan tingkat kelahiran dan harapan hidup
+yang menjadi faktor utama perubahan struktur penduduk Indonesia.
+
+</p>
+
+<canvas id="demographyChart" height="90"></canvas>
+
+<div class="interpretation mt-4">
+
+<strong>Interpretasi Grafik</strong>
+
+<hr>
+
+Penurunan tingkat kelahiran dan peningkatan harapan hidup terjadi secara bersamaan.
+Kedua fenomena tersebut menyebabkan proporsi penduduk lanjut usia semakin besar,
+meskipun jumlah penduduk Indonesia tetap mengalami peningkatan.
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- PART 2 DIMULAI DI SINI -->
+
+<!-- ================================================= -->
+<!-- 4. PENDAPATAN NASIONAL -->
+<!-- ================================================= -->
+
+<div class="container mt-5">
+
+    <div class="card-box">
+
+        <h2 class="section-title">
+
+            4. Pertumbuhan Pendapatan Nasional Indonesia
+
+        </h2>
+
+        <p style="text-align:justify;">
+
+            Selain mengalami pertumbuhan jumlah penduduk, Indonesia juga
+            menunjukkan peningkatan pada indikator ekonomi.
+            Berdasarkan data Badan Pusat Statistik (BPS),
+            pendapatan nasional meningkat dari
+            <strong>11,4 triliun rupiah pada tahun 2020</strong>
+            menjadi
+            <strong>17,363 triliun rupiah pada tahun 2025</strong>.
+            Kenaikan ini mencerminkan peningkatan aktivitas ekonomi nasional
+            sekaligus menjadi indikator meningkatnya pendapatan per kapita.
+
+        </p>
+
+        <canvas id="incomeChart" height="90"></canvas>
+
+        <div class="interpretation mt-4">
+
+            <strong>Interpretasi Grafik</strong>
+
+            <hr>
+
+            Kenaikan pendapatan nasional menunjukkan bahwa nilai ekonomi yang
+            dihasilkan Indonesia terus meningkat.
+            Pertumbuhan tersebut menjadi salah satu faktor yang
+            mendorong peningkatan pendapatan rata-rata masyarakat.
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- 5. HUBUNGAN DEMOGRAFI DAN EKONOMI -->
+<!-- ================================================= -->
+
+<div class="container mt-5">
+
+<div class="card-box">
+
+<h2 class="section-title">
+
+5. Hubungan Pertumbuhan Penduduk dan Pendapatan Nasional
+
+</h2>
+
+<p class="mb-4">
+
+Dua tren utama yang terjadi di Indonesia berjalan secara bersamaan,
+yaitu pertumbuhan jumlah penduduk dan peningkatan pendapatan nasional.
+
+</p>
+
+<div class="row text-center">
+
+<div class="col-lg-6">
+
+<div class="card border-primary h-100">
+
+<div class="card-header bg-primary text-white">
+
+Aspek Demografi
+
+</div>
+
+<div class="card-body">
+
+<h5>👥 Populasi Meningkat</h5>
+
+<p>269,58 juta → 324,05 juta jiwa</p>
+
+<hr>
+
+<h5>👶 Tingkat Kelahiran</h5>
+
+<p>Menurun</p>
+
+<hr>
+
+<h5>❤️ Harapan Hidup</h5>
+
+<p>Meningkat</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-6">
+
+<div class="card border-success h-100">
+
+<div class="card-header bg-success text-white">
+
+Aspek Ekonomi
+
+</div>
+
+<div class="card-body">
+
+<h5>💰 Pendapatan Nasional</h5>
+
+<p>11,4 T → 17,363 T</p>
+
+<hr>
+
+<h5>📈 Pendapatan Per Kapita</h5>
+
+<p>Meningkat</p>
+
+<hr>
+
+<h5>🛒 Daya Beli</h5>
+
+<p>Meningkat</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- 6. FLOWCHART -->
+<!-- ================================================= -->
+
+<div class="container mt-5">
+
+<div class="card-box">
+
+<h2 class="section-title text-center">
+
+6. Hubungan Antarvariabel
+
+</h2>
+
+<div class="row">
+
+<div class="col-lg-5">
+
+<div class="alert alert-primary text-center">
+
+<h5>Pertumbuhan Penduduk</h5>
+
+<p>Jumlah penduduk meningkat</p>
+
+</div>
+
+<div class="text-center fs-2">
+
+↓
+
+</div>
+
+<div class="alert alert-primary text-center">
+
+Kebutuhan Pangan Meningkat
+
+</div>
+
+</div>
+
+<div class="col-lg-2 d-flex justify-content-center align-items-center">
+
+<h1>
+
+➜
+
+</h1>
+
+</div>
+
+<div class="col-lg-5">
+
+<div class="alert alert-success text-center">
+
+<h5>Pendapatan Nasional Naik</h5>
+
+</div>
+
+<div class="text-center fs-2">
+
+↓
+
+</div>
+
+<div class="alert alert-success text-center">
+
+Pendapatan Per Kapita Naik
+
+</div>
+
+<div class="text-center fs-2">
+
+↓
+
+</div>
+
+<div class="alert alert-success text-center">
+
+Daya Beli Naik
+
+</div>
+
+</div>
+
+</div>
+
+<div class="text-center mt-5">
+
+<h2>
+
+⬇
+
+</h2>
+
+<div class="alert alert-warning">
+
+<h4>
+
+🌾 Tekanan terhadap Sektor Agrikultur
+
+</h4>
+
+<p>
+
+Menyediakan pangan dalam jumlah yang lebih banyak
+serta memenuhi kebutuhan pangan yang semakin beragam.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- 7. TIMELINE -->
+<!-- ================================================= -->
+
+<div class="container mt-5">
+
+<div class="card-box">
+
+<h2 class="section-title">
+
+7. Timeline Perubahan
+
+</h2>
+
+<table class="table table-bordered table-striped">
+
+<thead class="table-primary">
+
+<tr>
+
+<th width="120">Tahun</th>
+
+<th>Perkembangan</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>2020</td>
+
+<td>
+Penduduk 269,58 juta jiwa dan pendapatan nasional sebesar 11,4 triliun rupiah.
+</td>
+
+</tr>
+
+<tr>
+
+<td>2025</td>
+
+<td>
+Pendapatan nasional meningkat menjadi 17,363 triliun rupiah sehingga daya beli masyarakat ikut meningkat.
+</td>
+
+</tr>
+
+<tr>
+
+<td>2030</td>
+
+<td>
+Jumlah penduduk terus meningkat, sedangkan tingkat kelahiran terus menurun.
+</td>
+
+</tr>
+
+<tr>
+
+<td>2040</td>
+
+<td>
+Proporsi penduduk lanjut usia semakin besar akibat meningkatnya harapan hidup.
+</td>
+
+</tr>
+
+<tr>
+
+<td>2045</td>
+
+<td>
+Penduduk diproyeksikan mencapai 324,05 juta jiwa dan Indonesia memasuki fase ageing society.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- 8. KEY FINDINGS -->
+<!-- ================================================= -->
+
+<div class="container mt-5">
+
+<div class="card-box">
+
+<h2 class="section-title">
+
+8. Key Findings
+
+</h2>
+
+<div class="row">
+
+<div class="col-md-6">
+
+<ul class="list-group">
+
+<li class="list-group-item">📈 Jumlah penduduk meningkat.</li>
+
+<li class="list-group-item">👶 Tingkat kelahiran menurun.</li>
+
+<li class="list-group-item">❤️ Harapan hidup meningkat.</li>
+
+<li class="list-group-item">👴 Proporsi penduduk lansia bertambah.</li>
+
+</ul>
+
+</div>
+
+<div class="col-md-6">
+
+<ul class="list-group">
+
+<li class="list-group-item">💰 Pendapatan nasional meningkat.</li>
+
+<li class="list-group-item">📊 Pendapatan per kapita meningkat.</li>
+
+<li class="list-group-item">🛒 Daya beli masyarakat meningkat.</li>
+
+<li class="list-group-item">🌾 Agrikultur menghadapi tekanan ganda.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- 9. KESIMPULAN -->
+<!-- ================================================= -->
+
+<div class="container mt-5 mb-5">
+
+<div class="card-box">
+
+<h2 class="section-title">
+
+Kesimpulan Visual
+
+</h2>
+
+<p style="text-align:justify;">
+
+Berdasarkan proyeksi Badan Pusat Statistik, Indonesia diperkirakan
+mengalami peningkatan jumlah penduduk hingga tahun 2045.
+Pada saat yang sama, struktur demografi berubah akibat menurunnya
+tingkat kelahiran dan meningkatnya harapan hidup sehingga
+proporsi penduduk lanjut usia semakin besar.
+
+</p>
+
+<p style="text-align:justify;">
+
+Di sisi ekonomi, peningkatan pendapatan nasional turut meningkatkan
+pendapatan per kapita dan daya beli masyarakat.
+Kedua tren tersebut menyebabkan sektor agrikultur menghadapi tantangan
+untuk memenuhi kebutuhan pangan dalam jumlah yang lebih besar
+serta menyediakan produk pangan yang semakin beragam sesuai
+perkembangan pola konsumsi masyarakat.
+
+</p>
+
+</div>
+
+</div>
+
+<footer class="text-center">
+
+Visualisasi Demografi dan Ekonomi Indonesia
+
+<br>
+
+<small>
+
+Sumber Data:
+Badan Pusat Statistik (BPS)
+
+</small>
+
+</footer>
+
+<script>
+
+// Grafik 1
+new Chart(document.getElementById('populationChart'),{
+type:'bar',
+data:{
+labels:['2020','2045'],
+datasets:[{
+label:'Jumlah Penduduk (Juta Jiwa)',
+data:[269.58,324.05]
+}]
+},
+options:{
+plugins:{legend:{display:false}},
+responsive:true
+}
+});
+
+// Grafik 2
+new Chart(document.getElementById('demographyChart'),{
+type:'line',
+data:{
+labels:['2020','2025','2030','2035','2040','2045'],
+datasets:[
+{
+label:'Tingkat Kelahiran (Indeks)',
+data:[100,97,94,90,86,82],
+tension:0.4
+},
+{
+label:'Harapan Hidup (Indeks)',
+data:[100,102,105,108,111,114],
+tension:0.4
+}
+]
+},
+options:{responsive:true}
+});
+
+// Grafik 3
+new Chart(document.getElementById('incomeChart'),{
+type:'bar',
+data:{
+labels:['2020','2025'],
+datasets:[{
+label:'Pendapatan Nasional (Triliun Rupiah)',
+data:[11.4,17.363]
+}]
+},
+options:{
+plugins:{legend:{display:false}},
+responsive:true
+}
+});
+
+</script>
+
+</body>
+</html>
