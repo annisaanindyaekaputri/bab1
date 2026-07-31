@@ -3,11 +3,14 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Skripsi | Pengungkapan Aset Biologis</title>
+<title>Visualisasi Bab I Skripsi</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -17,96 +20,245 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Inter,sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-background:#f7f8fa;
-color:#222;
+
+font-family:'Inter',sans-serif;
+background:#f5f7f8;
+color:#2d3436;
 line-height:1.8;
+
 }
 
 header{
 
-padding:70px 25px;
-text-align:center;
-background:#2e7d32;
+background:linear-gradient(135deg,#2e7d32,#43a047);
+
 color:white;
+
+padding:80px 20px;
+
+text-align:center;
 
 }
 
 header h1{
-font-size:34px;
-margin-bottom:15px;
+
+font-size:40px;
+font-weight:700;
+max-width:1100px;
+margin:auto;
+
 }
 
 header p{
+
+margin-top:25px;
+
+font-size:18px;
+
 max-width:900px;
-margin:auto;
-opacity:.9;
+
+margin-left:auto;
+margin-right:auto;
+
+opacity:.95;
+
+}
+
+nav{
+
+position:sticky;
+top:0;
+
+background:white;
+
+box-shadow:0 3px 15px rgba(0,0,0,.08);
+
+z-index:999;
+
+}
+
+nav ul{
+
+display:flex;
+
+justify-content:center;
+
+list-style:none;
+
+flex-wrap:wrap;
+
+}
+
+nav li{
+
+margin:15px;
+
+}
+
+nav a{
+
+text-decoration:none;
+font-weight:600;
+color:#2e7d32;
+
+transition:.25s;
+
+}
+
+nav a:hover{
+
+color:#1b5e20;
+
 }
 
 section{
 
-max-width:1100px;
+max-width:1200px;
+
 margin:auto;
-padding:70px 20px;
+
+padding:80px 20px;
 
 }
 
 .card{
 
 background:white;
+
+border-radius:18px;
+
 padding:35px;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,.07);
+
+box-shadow:0 10px 35px rgba(0,0,0,.08);
 
 }
 
-h2{
+.card h2{
 
-margin-bottom:20px;
 color:#2e7d32;
 
+margin-bottom:18px;
+
+font-size:32px;
+
 }
 
-.chartBox{
+.card p{
 
-margin-top:30px;
+text-align:justify;
+
+}
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+margin-top:35px;
+
+margin-bottom:35px;
+
+}
+
+.stat{
+
+background:#eef8ef;
+
+padding:25px;
+
+border-radius:14px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.stat:hover{
+
+transform:translateY(-5px);
+
+}
+
+.stat h3{
+
+font-size:40px;
+
+color:#2e7d32;
+
+margin-bottom:8px;
+
+}
+
+.chart{
+
+margin-top:35px;
+
 height:420px;
 
 }
 
-.highlight{
+.tag{
 
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-margin-top:30px;
+display:inline-block;
 
-}
+background:#2e7d32;
 
-.item{
+color:white;
 
-background:#edf7ee;
-padding:20px;
-border-radius:12px;
-text-align:center;
+padding:8px 15px;
 
-}
+border-radius:30px;
 
-.item h3{
+margin-bottom:20px;
 
-font-size:35px;
-color:#2e7d32;
+font-size:14px;
+
+font-weight:600;
 
 }
 
-footer{
+.fade{
 
-padding:40px;
-text-align:center;
-color:#666;
+opacity:0;
+
+transform:translateY(30px);
+
+transition:1s;
+
+}
+
+.fade.show{
+
+opacity:1;
+
+transform:none;
+
+}
+
+@media(max-width:768px){
+
+header h1{
+
+font-size:30px;
+
+}
+
+.card h2{
+
+font-size:25px;
+
+}
 
 }
 
@@ -119,59 +271,82 @@ color:#666;
 <header>
 
 <h1>
-Pengaruh Biological Asset Intensity, Working Capital Turnover, dan Asset Turnover terhadap Pengungkapan Aset Biologis
+
+Pengaruh Biological Asset Intensity, Working Capital Turnover, dan Asset Turnover terhadap Pengungkapan Aset Biologis pada Perusahaan Sektor Agrikultur di BEI Periode 2020–2024
+
 </h1>
 
 <p>
 
-Website pendukung penjelasan Bab I Skripsi
+Website ini dibuat sebagai media visual untuk membantu menjelaskan latar belakang penelitian (Bab I) melalui grafik dan ringkasan data sehingga hubungan antar fenomena dapat dipahami secara lebih sistematis.
 
 </p>
 
 </header>
 
-<section>
+<nav>
+
+<ul>
+
+<li><a href="#penduduk">Penduduk</a></li>
+
+<li><a href="#pendapatan">Pendapatan</a></li>
+
+<li><a href="#konsumsi">Konsumsi</a></li>
+
+<li><a href="#agrikultur">Agrikultur</a></li>
+
+<li><a href="#variabel">Variabel</a></li>
+
+</ul>
+
+</nav>
+
+<section id="penduduk" class="fade">
 
 <div class="card">
 
+<div class="tag">
+
+BPS Indonesia
+
+</div>
+
 <h2>
-📈 Pertumbuhan Penduduk Indonesia
+
+📈 Proyeksi Pertumbuhan Penduduk Indonesia
+
 </h2>
 
 <p>
 
-BPS memproyeksikan jumlah penduduk Indonesia meningkat dari
-<strong>269,58 juta jiwa (2020)</strong>
-menjadi
-<strong>324,05 juta jiwa (2045)</strong>.
-
-Peningkatan ini tidak hanya menunjukkan bertambahnya jumlah penduduk,
-tetapi juga perubahan struktur demografi menuju masyarakat yang semakin menua
-karena harapan hidup meningkat dan tingkat kelahiran menurun.
+Badan Pusat Statistik (BPS) memproyeksikan jumlah penduduk Indonesia meningkat dari <strong>269,58 juta jiwa pada tahun 2020</strong> menjadi <strong>324,05 juta jiwa pada tahun 2045</strong>. Pertumbuhan tersebut disertai perubahan struktur demografi akibat meningkatnya harapan hidup dan menurunnya tingkat kelahiran sehingga proporsi penduduk lanjut usia semakin besar.
 
 </p>
 
-<div class="highlight">
+<div class="stats">
 
-<div class="item">
+<div class="stat">
 
 <h3>269,58</h3>
 
 Juta Jiwa<br>
-2020
+
+<strong>2020</strong>
 
 </div>
 
-<div class="item">
+<div class="stat">
 
 <h3>324,05</h3>
 
 Juta Jiwa<br>
-2045
+
+<strong>2045</strong>
 
 </div>
 
-<div class="item">
+<div class="stat">
 
 <h3>+54,47</h3>
 
@@ -181,7 +356,7 @@ Juta Jiwa
 
 </div>
 
-<div class="chartBox">
+<div class="chart">
 
 <canvas id="populationChart"></canvas>
 
@@ -191,59 +366,61 @@ Juta Jiwa
 
 </section>
 
-<section>
+<section id="pendapatan" class="fade">
 
 <div class="card">
 
+<div class="tag">
+
+Pendapatan Nasional
+
+</div>
+
 <h2>
 
-💰 Pendapatan Nasional Indonesia
+💰 Pertumbuhan Pendapatan Nasional Indonesia
 
 </h2>
 
 <p>
 
-Pendapatan nasional Indonesia meningkat dari
-<strong>11,4 triliun rupiah pada tahun 2020</strong>
-menjadi
-<strong>17,363 triliun rupiah pada tahun 2025.</strong>
-
-Kenaikan tersebut menunjukkan peningkatan daya beli masyarakat yang
-berimplikasi terhadap meningkatnya permintaan pangan.
+BPS mencatat pendapatan nasional Indonesia meningkat dari <strong>11,4 triliun rupiah pada tahun 2020</strong> menjadi <strong>17,363 triliun rupiah pada tahun 2025</strong>. Peningkatan tersebut menggambarkan naiknya aktivitas ekonomi dan daya beli masyarakat sehingga permintaan terhadap berbagai komoditas, termasuk produk agrikultur, ikut meningkat.
 
 </p>
 
-<div class="highlight">
+<div class="stats">
 
-<div class="item">
+<div class="stat">
 
 <h3>11,4</h3>
 
-Triliun<br>
-2020
+Triliun Rupiah<br>
+
+<strong>2020</strong>
 
 </div>
 
-<div class="item">
+<div class="stat">
 
 <h3>17,363</h3>
 
-Triliun<br>
-2025
+Triliun Rupiah<br>
+
+<strong>2025</strong>
 
 </div>
 
-<div class="item">
+<div class="stat">
 
 <h3>+52%</h3>
 
-Pertumbuhan
+Kenaikan
 
 </div>
 
 </div>
 
-<div class="chartBox">
+<div class="chart">
 
 <canvas id="incomeChart"></canvas>
 
@@ -253,9 +430,13 @@ Pertumbuhan
 
 </section>
 
-<section>
+<section id="konsumsi" class="fade">
 
 <div class="card">
+
+<div class="tag">
+OECD-FAO & Gouel & Guimbard
+</div>
 
 <h2>
 🍗 Pergeseran Pola Konsumsi Masyarakat
@@ -263,154 +444,103 @@ Pertumbuhan
 
 <p>
 
-Pertumbuhan penduduk dan meningkatnya pendapatan menyebabkan pola konsumsi
-masyarakat berubah. Konsumen mulai meningkatkan konsumsi produk hewani,
-lemak, produk olahan, serta pangan bernilai gizi tinggi. Tren ini telah
-diprediksi oleh Gouel & Guimbard (2014) dan kembali diperkuat melalui
-proyeksi OECD-FAO (2025).
+Pertumbuhan jumlah penduduk dan meningkatnya pendapatan masyarakat menyebabkan perubahan pola konsumsi. Permintaan mulai bergeser dari makanan pokok menuju produk hewani, produk olahan, serta pangan dengan nilai gizi yang lebih tinggi. Penelitian Gouel & Guimbard (2014) memperkirakan peningkatan permintaan berbagai komoditas agrikultur sebesar 23%–38%, sedangkan OECD–FAO (2025) menunjukkan bahwa tren tersebut masih berlanjut pada periode 2025–2034.
 
 </p>
 
-<div class="highlight">
+<div class="stats">
 
-<div class="item">
-
+<div class="stat">
 <h3>23–38%</h3>
-
-Kenaikan permintaan beberapa komoditas agrikultur
-<br>
-(Gouel & Guimbard, 2014)
-
+Perkiraan kenaikan permintaan komoditas agrikultur
 </div>
 
-<div class="item">
-
+<div class="stat">
 <h3>2025–2034</h3>
-
-OECD-FAO memproyeksikan tren tersebut masih terus berlanjut.
-
+Tren diproyeksikan terus berlanjut
 </div>
 
-<div class="item">
-
-<h3>↑ Protein Hewani</h3>
-
-Permintaan daging, ikan,
-unggas dan susu meningkat.
-
+<div class="stat">
+<h3>↑ Protein</h3>
+Permintaan daging, ikan, dan susu meningkat
 </div>
 
 </div>
 
-<div class="chartBox">
-
+<div class="chart">
 <canvas id="consumptionChart"></canvas>
-
 </div>
 
 </div>
 
 </section>
 
-
-<section>
+<section id="agrikultur" class="fade">
 
 <div class="card">
 
+<div class="tag">
+Kontribusi terhadap PDB
+</div>
+
 <h2>
-
-🌾 Kontribusi Sektor Agrikultur terhadap PDB Indonesia
-
+🌾 Peran Sektor Agrikultur dalam Perekonomian Indonesia
 </h2>
 
 <p>
 
-Sektor agrikultur merupakan salah satu kontributor terbesar terhadap
-Produk Domestik Bruto (PDB) Indonesia. Pada tahun 2024 kontribusinya
-mencapai <strong>12,61%</strong>, sedangkan tahun 2025 meningkat menjadi
-<strong>13,10%</strong>. Pertumbuhan sektor ini menunjukkan bahwa aktivitas
-agrikultur memiliki peran strategis dalam pembangunan nasional.
+Sektor agrikultur merupakan salah satu kontributor utama terhadap Produk Domestik Bruto (PDB) Indonesia. Kontribusinya meningkat dari 12,61% pada tahun 2024 menjadi 13,10% pada tahun 2025. Hal ini menunjukkan bahwa sektor agrikultur memiliki peran strategis dalam mendukung pertumbuhan ekonomi nasional, penyediaan pangan, serta penciptaan lapangan kerja.
 
 </p>
 
-<div class="highlight">
+<div class="stats">
 
-<div class="item">
-
+<div class="stat">
 <h3>12,61%</h3>
-
 Kontribusi PDB 2024
-
 </div>
 
-<div class="item">
-
+<div class="stat">
 <h3>13,10%</h3>
-
 Kontribusi PDB 2025
-
 </div>
 
-<div class="item">
-
+<div class="stat">
 <h3>5,33%</h3>
-
-Laju Pertumbuhan
-2025
-
+Laju Pertumbuhan 2025
 </div>
 
 </div>
 
-<div class="chartBox">
-
+<div class="chart">
 <canvas id="gdpChart"></canvas>
-
 </div>
 
 </div>
 
 </section>
 
-
-<section>
+<section class="fade">
 
 <div class="card">
 
+<div class="tag">
+Urgensi Penelitian
+</div>
+
 <h2>
-
-📌 Mengapa Penelitian Ini Penting?
-
+📌 Mengapa Penelitian Ini Dilakukan?
 </h2>
 
 <p>
 
-Jumlah penduduk Indonesia terus bertambah dan diikuti peningkatan
-pendapatan masyarakat. Kondisi tersebut mendorong perubahan pola konsumsi,
-khususnya meningkatnya permintaan terhadap produk-produk agrikultur.
+Berdasarkan data sebelumnya, peningkatan jumlah penduduk, meningkatnya pendapatan masyarakat, serta perubahan pola konsumsi menyebabkan permintaan terhadap produk agrikultur terus meningkat. Dampaknya, perusahaan agrikultur dituntut untuk mengelola aset biologis secara lebih efektif.
 
 </p>
 
 <p>
 
-Akibatnya, perusahaan sektor agrikultur harus meningkatkan kapasitas
-produksi serta mengelola aset biologis secara lebih efektif. Dalam kondisi
-seperti ini, informasi mengenai aset biologis menjadi semakin penting bagi
-investor, kreditur, regulator maupun pihak lainnya.
-
-</p>
-
-<p>
-
-Melalui PSAK 69, perusahaan diwajibkan mengungkapkan informasi mengenai
-aset biologis secara memadai. Oleh karena itu penelitian ini dilakukan
-untuk mengetahui apakah karakteristik perusahaan yang diwakili oleh
-<strong>Biological Asset Intensity</strong>,
-<strong>Working Capital Turnover</strong>,
-dan
-<strong>Asset Turnover</strong>
-berpengaruh terhadap tingkat pengungkapan aset biologis perusahaan
-agrikultur yang terdaftar di Bursa Efek Indonesia periode 2020–2024.
+Dalam kondisi tersebut, transparansi informasi mengenai aset biologis menjadi semakin penting bagi investor, kreditur, regulator, dan pemangku kepentingan lainnya. PSAK 69 mengatur bahwa perusahaan harus mengungkapkan informasi aset biologis secara memadai agar laporan keuangan dapat memberikan informasi yang relevan dan andal.
 
 </p>
 
@@ -418,100 +548,46 @@ agrikultur yang terdaftar di Bursa Efek Indonesia periode 2020–2024.
 
 </section>
 
-new Chart(
-document.getElementById("consumptionChart"),
-{
-type:'bar',
-data:{
-labels:[
-'Produk Hewani',
-'Lemak Masak',
-'Pemanis',
-'Beras/Biji-bijian'
-],
-datasets:[
-{
-label:'Perubahan Permintaan',
-data:[35,28,23,-10]
-}
-]
-},
-options:{
-responsive:true,
-maintainAspectRatio:false,
-plugins:{
-title:{
-display:true,
-text:'Ilustrasi Pergeseran Pola Konsumsi'
-}
-}
-}
-});
-
-
-
-new Chart(
-document.getElementById("gdpChart"),
-{
-type:'line',
-data:{
-labels:['2024','2025'],
-datasets:[
-{
-label:'Kontribusi terhadap PDB (%)',
-data:[12.61,13.10],
-fill:false,
-tension:.35
-}
-]
-},
-options:{
-responsive:true,
-maintainAspectRatio:false
-}
-});
-
-<section>
+<section class="fade">
 
 <div class="card">
 
+<div class="tag">
+Alur Penelitian
+</div>
+
 <h2>
-🔍 Alur Logika Penelitian
+🔍 Alur Logika Bab I
 </h2>
 
 <div class="flow">
 
-<div class="flow-item">
-👥<br>
-Pertumbuhan Penduduk
+<div class="flow-box">
+👥<br><strong>Penduduk Bertambah</strong>
 </div>
 
-<span>→</span>
+<div class="flow-arrow">→</div>
 
-<div class="flow-item">
-💰<br>
-Pendapatan Meningkat
+<div class="flow-box">
+💰<br><strong>Pendapatan Naik</strong>
 </div>
 
-<span>→</span>
+<div class="flow-arrow">→</div>
 
-<div class="flow-item">
-🛒<br>
-Perubahan Konsumsi
+<div class="flow-box">
+🛒<br><strong>Pola Konsumsi Berubah</strong>
 </div>
 
-<span>→</span>
+<div class="flow-arrow">→</div>
 
-<div class="flow-item">
-🌾<br>
-Sektor Agrikultur Berkembang
+<div class="flow-box">
+🌾<br><strong>Sektor Agrikultur Berkembang</strong>
 </div>
 
-<span>→</span>
+<div class="flow-arrow">→</div>
 
-<div class="flow-item">
-🌱<br>
-Pengungkapan Aset Biologis
+<div class="flow-box">
+📄<br><strong>Pengungkapan Aset Biologis</strong>
 </div>
 
 </div>
@@ -520,19 +596,21 @@ Pengungkapan Aset Biologis
 
 </section>
 
-
-
-<section>
+<section id="variabel" class="fade">
 
 <div class="card">
 
+<div class="tag">
+Variabel Penelitian
+</div>
+
 <h2>
-📚 Variabel Penelitian
+📚 Variabel yang Diteliti
 </h2>
 
 <div class="variables">
 
-<div class="var">
+<div class="variable-card">
 
 <h3>X1</h3>
 
@@ -540,13 +618,13 @@ Pengungkapan Aset Biologis
 
 <p>
 
-Menggambarkan proporsi aset biologis yang dimiliki perusahaan terhadap total aset. Semakin besar proporsinya, semakin penting informasi aset biologis bagi pengguna laporan keuangan.
+Menggambarkan proporsi aset biologis terhadap total aset perusahaan.
 
 </p>
 
 </div>
 
-<div class="var">
+<div class="variable-card">
 
 <h3>X2</h3>
 
@@ -554,13 +632,13 @@ Menggambarkan proporsi aset biologis yang dimiliki perusahaan terhadap total ase
 
 <p>
 
-Mengukur efektivitas penggunaan modal kerja dalam menghasilkan penjualan.
+Mengukur efektivitas modal kerja dalam menghasilkan penjualan.
 
 </p>
 
 </div>
 
-<div class="var">
+<div class="variable-card">
 
 <h3>X3</h3>
 
@@ -568,13 +646,13 @@ Mengukur efektivitas penggunaan modal kerja dalam menghasilkan penjualan.
 
 <p>
 
-Mengukur kemampuan perusahaan memanfaatkan seluruh aset untuk menghasilkan pendapatan.
+Mengukur efektivitas penggunaan seluruh aset perusahaan.
 
 </p>
 
 </div>
 
-<div class="var">
+<div class="variable-card">
 
 <h3>Y</h3>
 
@@ -594,42 +672,41 @@ Diukur menggunakan indeks pengungkapan berdasarkan PSAK 69.
 
 </section>
 
-
-
-<section>
+<section class="fade">
 
 <div class="card">
 
+<div class="tag">
+Kerangka Konseptual
+</div>
+
 <h2>
-🧩 Kerangka Konseptual
+🧩 Hubungan Antar Variabel
 </h2>
 
-<div class="model">
+<div class="concept">
 
-<div class="left">
+<div class="left-model">
 
-<div class="box">Biological Asset Intensity (X1)</div>
+<div class="model-box">Biological Asset Intensity (X1)</div>
 
-<div class="box">Working Capital Turnover (X2)</div>
+<div class="model-box">Working Capital Turnover (X2)</div>
 
-<div class="box">Asset Turnover (X3)</div>
+<div class="model-box">Asset Turnover (X3)</div>
 
 </div>
 
-<div class="arrow">
+<div class="middle-arrow">
 
 ➡️
 
 </div>
 
-<div class="right">
+<div class="right-model">
 
-<div class="bigbox">
+<div class="result-box">
 
-Pengungkapan
-Aset Biologis
-
-(Y)
+Pengungkapan Aset Biologis (Y)
 
 </div>
 
@@ -643,46 +720,245 @@ Aset Biologis
 
 <footer>
 
-Data: Badan Pusat Statistik (BPS)
+<div style="max-width:1000px;margin:auto;">
+
+<h3 style="margin-bottom:15px;color:#2e7d32;">
+Visualisasi Data Bab I Skripsi
+</h3>
+
+<p>
+
+Website ini disusun sebagai media pendukung presentasi skripsi agar hubungan antara fenomena penelitian, urgensi penelitian, serta variabel penelitian dapat dipahami secara lebih sistematis.
+
+</p>
+
+<p style="margin-top:20px;font-size:14px;color:#777;">
+
+Sumber Data:
+Badan Pusat Statistik (BPS),
+OECD-FAO Agricultural Outlook 2025–2034,
+Gouel & Guimbard (2014),
+PSAK 69 Agrikultur.
+
+</p>
+
+</div>
 
 </footer>
 
 <script>
 
-new Chart(
-document.getElementById("populationChart"),
-{
-type:'bar',
+/* ===========================
+   CHART 1
+=========================== */
+
+new Chart(document.getElementById("populationChart"),{
+
+type:"bar",
+
 data:{
-labels:['2020','2045'],
+
+labels:["2020","2045"],
+
 datasets:[{
-label:'Juta Jiwa',
-data:[269.58,324.05]
+
+label:"Jumlah Penduduk (Juta Jiwa)",
+
+data:[269.58,324.05],
+
+backgroundColor:[
+"#66bb6a",
+"#2e7d32"
+]
+
 }]
+
 },
+
 options:{
+
 responsive:true,
-maintainAspectRatio:false
+
+maintainAspectRatio:false,
+
+plugins:{
+legend:{
+display:false
 }
+},
+
+scales:{
+y:{
+beginAtZero:false
+}
+}
+
+}
+
 });
 
-new Chart(
-document.getElementById("incomeChart"),
-{
-type:'line',
+
+/* ===========================
+   CHART 2
+=========================== */
+
+new Chart(document.getElementById("incomeChart"),{
+
+type:"line",
+
 data:{
-labels:['2020','2025'],
+
+labels:["2020","2025"],
+
 datasets:[{
-label:'Triliun Rupiah',
+
+label:"Pendapatan Nasional",
+
 data:[11.4,17.363],
+
+borderColor:"#2e7d32",
+
+backgroundColor:"#2e7d32",
+
 fill:false,
+
 tension:.3
+
 }]
+
 },
+
 options:{
+
 responsive:true,
+
 maintainAspectRatio:false
+
 }
+
+});
+
+
+/* ===========================
+   CHART 3
+=========================== */
+
+new Chart(document.getElementById("consumptionChart"),{
+
+type:"bar",
+
+data:{
+
+labels:[
+"Produk Hewani",
+"Lemak",
+"Pemanis",
+"Beras/Biji-bijian"
+],
+
+datasets:[{
+
+label:"Indeks Pergeseran Permintaan",
+
+data:[35,28,23,10],
+
+backgroundColor:[
+"#43a047",
+"#66bb6a",
+"#81c784",
+"#c8e6c9"
+]
+
+}]
+
+},
+
+options:{
+
+responsive:true,
+
+maintainAspectRatio:false,
+
+plugins:{
+
+title:{
+
+display:true,
+
+text:"Ilustrasi Pergeseran Pola Konsumsi"
+
+}
+
+}
+
+}
+
+});
+
+
+/* ===========================
+   CHART 4
+=========================== */
+
+new Chart(document.getElementById("gdpChart"),{
+
+type:"line",
+
+data:{
+
+labels:["2024","2025"],
+
+datasets:[{
+
+label:"Kontribusi terhadap PDB (%)",
+
+data:[12.61,13.10],
+
+borderColor:"#2e7d32",
+
+backgroundColor:"#2e7d32",
+
+fill:false,
+
+tension:.4
+
+}]
+
+},
+
+options:{
+
+responsive:true,
+
+maintainAspectRatio:false
+
+}
+
+});
+
+
+/* ===========================
+   ANIMASI SAAT SCROLL
+=========================== */
+
+const observer = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+
+observer.observe(el);
+
 });
 
 </script>
